@@ -11,7 +11,7 @@ const userSchema = new Schema(
         timestamps: true,
     }
 )
-//this is type of hook which runs before user creation
+    //this is type of hook which runs before user creation
 userSchema.pre("save", function (next) {
     //create and update
     //if update operation is needed like just to update email id password will

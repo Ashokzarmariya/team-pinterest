@@ -14,7 +14,7 @@ const register = async (req,res)=>{
          return res.status(400).json({status:"failed",message:"Please provide diffrent email address"});
     //else create user and  we will hash the password // we do hashing in user.model file
         user = await User.create(req.body);
-        console.log(user)
+       // console.log(user)
 
     //we will create the token 
         const token =newToken(user);
@@ -55,5 +55,15 @@ res.status(201).json({user,token});
     return res.status(500).json({status:"failed",message:e.message});
 }
 }
+// const data1 = async (req,res)=>{
+//     try{ 
+//         const data = await User.find().lean().exec();
+//         return res.status(200).json(data);
+//       }catch(e){
+//         return res.status(500).json({message: e.message});
+//       }
+          
+      
+// }
 
 module.exports ={register,login};
