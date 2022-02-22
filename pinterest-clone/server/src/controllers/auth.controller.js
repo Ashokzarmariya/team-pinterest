@@ -14,7 +14,7 @@ const register = async (req,res)=>{
          return res.status(400).json({status:"failed",message:"Please provide diffrent email address"});
     //else create user and  we will hash the password // we do hashing in user.model file
         user = await User.create(req.body);
-     
+        console.log(user)
 
     //we will create the token 
         const token =newToken(user);
@@ -29,8 +29,31 @@ const register = async (req,res)=>{
     }
 };
 
-const login =(req,res)=>{
-    res.status(201).send("Login");
+const login = async (req,res)=>{
+try {
+//check if email exist or not
+// console.log(req.params.email)
+let user = await User.findOne({ email: req.body.email });
+// console.log(user)
+//if not present throw an error
+if(!user) 
+return res.status(400).json({status:"failed",message:"Please provide valid email address1"});
+
+//else we match the password 
+const match = await user.checkPassword(req.body.password)
+
+// if not matched throw an error 
+if(!match) 
+return res.status(400).json({status:"failed",message:"Please provide valid email address"});
+//if it is matched create the token   
+
+const token = newToken(user)
+//return the user and token
+
+res.status(201).json({user,token});
+}catch(e) {
+    return res.status(500).json({status:"failed",message:e.message});
+}
 }
 
 module.exports ={register,login};
