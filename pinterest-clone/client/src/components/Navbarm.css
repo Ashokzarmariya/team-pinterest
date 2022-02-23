@@ -1,5 +1,5 @@
 .nav{
-    border:1px solid black;
+    /* border:1px solid black; */
     height:70px;
     width:100%;
 }
@@ -13,7 +13,7 @@
 .abp{
     margin-left:51%;
     display: inline-block;
-    margin-top:20px;
+    margin-top:30px;
     /* width:40%; */
     /* padding-right: 20px; */
     /* vertical-align: middle; */

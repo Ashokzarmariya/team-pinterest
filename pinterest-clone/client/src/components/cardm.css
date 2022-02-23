@@ -1,0 +1,11 @@
+.cards1{
+  width: 100%;
+  border: 1px solid black;
+  height: 1500px;
+}
+
+.cards1 > .cimg1 {
+    display: grid;
+    grid-template-columns: (18% 18%);
+}
+
