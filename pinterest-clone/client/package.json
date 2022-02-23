@@ -11,6 +11,7 @@
     "react-animated-slider": "^2.0.0",
     "react-dom": "^17.0.2",
     "react-native-slider-text": "0.0.10",
+    "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "react-simple-image-slider": "^2.3.0",
     "react-slick": "^0.28.1",
