@@ -1,6 +1,7 @@
+const path = require("path");
 const express = require("express");
 
-const Product = require("../models/uploadprod.model");
+const ProductU = require("../models/uploadprod.model");
 
 const { uploadSingle, uploadMultiple } = require("../middlewares/upload");
 
@@ -8,7 +9,7 @@ const router = express.Router();
 
 router.get("", async (req, res) => {
   try {
-    const products = await Product.find().lean().exec();
+    const products = await ProductU.find().lean().exec();
 
     return res.send(products);
   } catch (err) {
@@ -16,9 +17,9 @@ router.get("", async (req, res) => {
   }
 });
 
-router.post("/single", uploadSingle("image_urls"), async (req, res) => {
+router.post("", uploadSingle("image_urls"), async (req, res) => {
   try {
-    const product = await Product.create({
+    const product = await ProductU.create({
       name: req.body.name,
       tag: req.body.tag,
       image_urls: req.file.path,
@@ -34,7 +35,7 @@ router.post("/multiple", uploadMultiple(2, "image_urls"), async (req, res) => {
   try {
     const filePaths = req.files.map((file) => file.path);
 
-    const product = await Product.create({
+    const product = await ProductU.create({
       name: req.body.name,
       tag: req.body.tag,
       image_urls: filePaths,
