@@ -1,10 +1,17 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Modal } from './components/profile/Modal';
+import { Pin } from './components/profile/pin';
+import { Profile } from './components/profile/profile';
 
 function App() {
   return (
-    <div className="App">
-      <h1>clone of pintet</h1>
+    <div >
+     
+      <Profile/>
+      {/* <Pin/> */}
+
+      {/* <Modal/> */}
     </div>
   );
 }
