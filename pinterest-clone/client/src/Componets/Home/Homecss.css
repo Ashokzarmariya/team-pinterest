@@ -1,0 +1,12 @@
+.fullScaleContent {
+    
+    width: 15%;
+    margin: 2% auto;
+    
+}
+.fullScaleContent img {
+    position: relative;
+    
+    max-width: 100%;
+    
+  }

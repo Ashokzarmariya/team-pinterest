@@ -1,12 +1,17 @@
-import logo from './logo.svg';
+
+//import { Router } from 'react-router-dom';
 import './App.css';
+import Routers from './Routes/Route';
 
 function App() {
   return (
-    <div className="App">
-      <h1>clone of pintet</h1>
+    <div className="">
+      
+      <Routers/>
+      
     </div>
   );
 }
+
 
 export default App;
