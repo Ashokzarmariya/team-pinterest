@@ -5,8 +5,6 @@ import React from "react";
 import { Landing } from "./landing";
 import { Business } from "./Business";
 import { Blog } from "./Blog";
-import { Login } from "./Login";
-import { Signup } from "./Signup";
 
 export const Main = () => {
   return (
@@ -16,8 +14,6 @@ export const Main = () => {
         <Route path="/About" element={<About />}></Route>
         <Route path="/bus" element={<Business />}></Route>
         <Route path="/blo" element={<Blog />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/signup" element={<Signup />}></Route>
       </Routes>
     </div>
   );
