@@ -61,9 +61,7 @@ res.status(201).json({user,token});
 //         return res.status(200).json(data);
 //       }catch(e){
 //         return res.status(500).json({message: e.message});
-//       }
-          
-      
+//       } 
 // }
 
 module.exports ={register,login};
