@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Modal.css"
 
-export const Modal=()=>{
+export const Modal=(props)=>{
 
 const [pinDetails,setPinDetails]=useState({
     title:"",
@@ -11,15 +11,15 @@ const [pinDetails,setPinDetails]=useState({
 
 })
 
-const save_pin=(pinDetails)=>{
-   const user_data={
+const save_pin=(pinDetails,add_pin)=>{
+   const pin_data={
        ...pinDetails,
        title:document.querySelector("#pin_title").value,
        description:document.querySelector("#pin_description").value,
        
    }
-
-   console.log(user_data)
+   add_pin(pin_data)
+   console.log(pin_data)
 }
 
 const [showLabel,setShowLabel]=useState(true);
@@ -96,7 +96,7 @@ const check_size=(event)=>{
                               }}
                               >
                                   <div className="pin_image">
-                                     <img onload={check_size} src={pinDetails.img_blob} alt="pin_image" />
+                                     <img onLoad={check_size} src={pinDetails.img_blob} alt="pin_image" />
                                 </div>
                               </div> 
                     </div>
@@ -115,7 +115,7 @@ const check_size=(event)=>{
                                <option value="small">small</option>
                                <option value="small">small</option>
                            </select>
-                           <div onClick={()=>save_pin(pinDetails)} className="save_pin">Save</div>
+                           <div onClick={()=>save_pin(pinDetails,props.add_pin)} className="save_pin">Save</div>
                        </div>
 
 

@@ -45,11 +45,11 @@ export const Profile=()=>{
            </div>
            </div>
            <hr />
-           <div onClick={()=>{
+           {/* <div onClick={()=>{
                setPlus(true);
            }} className="add_pin">
                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/OOjs_UI_icon_add.svg/1024px-OOjs_UI_icon_add.svg.png" alt="add pin" />
-           </div>
+           </div> */}
           
           <div>
 
