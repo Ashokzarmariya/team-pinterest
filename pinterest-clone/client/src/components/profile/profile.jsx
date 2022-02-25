@@ -20,13 +20,13 @@ export const Profile=()=>{
          
            <div className="profile-img">
                <div>
-                   <img src="https://i.pinimg.com/280x280_RS/2b/78/30/2b783010a797035f16de38ce9823e13f.jpg" alt="" />
+                   <img src="/images/profile/profile-img.jpg" alt="" />
                </div>
            </div> 
            <div className="profile-name">
-                <h2>Aswin Anandh</h2>
-                <h4>@aswinanand66</h4>
-                <h5>0 following</h5>
+                <h2>user name</h2>
+                <h4>@email</h4>
+                <h5>{Math.floor(Math.random() * 500) + 1} following</h5>
            </div>
            <div className="share-editProfile">
                <button>Share</button>

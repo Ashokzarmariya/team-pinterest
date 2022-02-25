@@ -1,7 +1,11 @@
 
+import { useState } from "react"
+import { Comments } from "./Comments"
 import "./Details.css"
 
 export const Details=()=>{
+
+    const [show,setShow]=useState(false)
 
     return (
         <div>
@@ -33,16 +37,27 @@ export const Details=()=>{
                        <div className="profile">
                            <div></div>
                            <div>
-                               <button className="follow_button">Follow</button>
+                               {/* <button className="follow_button">Follow</button> */}
                            </div>
                        </div>
                        <div className="comments">
-                           comments 
+                           <div className="comment">
+                               <div>
+                                   Comments
+                               </div>
+                               <div onClick={()=>{
+                                   setShow(!show)
+                               }} className="comments_icon">
+                                   <img src="/images/profile/right-arrow.png" alt="right-arrow" />
+                               </div>
+                           </div>
+                           {show?<Comments/>:null}
+                           {/* <Comments/> */}
                        </div>
                  </div>
             </div>
             <div className="more_like_this">
-                    more like this
+                    More like this
             </div>
 
             </div>

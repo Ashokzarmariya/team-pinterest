@@ -64,7 +64,7 @@ const check_size=(event)=>{
                 <div className="side" id="left_side">
                     <div className="section1">
                         <div className="pint_mock_icon_container">
-                            <img src="https://media.istockphoto.com/vectors/typing-text-chat-isolated-vector-icon-modern-geometric-illustration-vector-id1186972006?k=20&m=1186972006&s=612x612&w=0&h=vFGrVHgdRGWyUlDcW5KPfAXy5sfcjLg5Cl231ZF78hM=" alt="edit" />
+                            <img src="/images/profile/edit.jpg" alt="edit" />
                         </div>
                     </div>
                     <div className="section2">
@@ -111,9 +111,9 @@ const check_size=(event)=>{
                        <div className="select_size">
                            <select defaultValue="Select" name="pin_size" id="pin_size">
                                <option value="">Select</option>
+                               {/* <option value="small">small</option>
                                <option value="small">small</option>
-                               <option value="small">small</option>
-                               <option value="small">small</option>
+                               <option value="small">small</option> */}
                            </select>
                            <div onClick={()=>save_pin(pinDetails,props.add_pin)} className="save_pin">Save</div>
                        </div>

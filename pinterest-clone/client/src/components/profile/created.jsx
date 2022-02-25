@@ -38,7 +38,7 @@ add_pin=pinDetails=>{
     return (
         <div>
             <div onClick={()=> this.setState({show_modal:true})} className="pint_mock_icon_container add_pin">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/OOjs_UI_icon_add.svg/1024px-OOjs_UI_icon_add.svg.png" alt="add pin" />
+            <img src="/images/profile/addpin.png" alt="add pin" />
                 
             </div>
 

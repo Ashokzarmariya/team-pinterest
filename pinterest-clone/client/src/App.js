@@ -8,8 +8,8 @@ import { Profile } from './components/profile/profile';
 function App() {
   return (
     <div >
-     {/* <Details/> */}
-      <Profile/>
+     <Details/>
+      {/* <Profile/> */}
       {/* <Pin/> */}
 
       {/* <Modal/> */}
