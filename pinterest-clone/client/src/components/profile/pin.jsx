@@ -27,7 +27,7 @@ const check_size=(event)=>{
 
     image.classList.add("pin_max_width");
 
-    if(image.getBoundingClientReact().width < image.parentElement.getBoundingClientReact().width || image.getBoundingClientReact().height < image.parentElement.getBoundingClientReact().height){
+    if(image.getBoundingClientRect().width < image.parentElement.getBoundingClientRect().width || image.getBoundingClientRect().height < image.parentElement.getBoundingClientRect().height){
         image.classList.remove("pin_max_width");
         image.classList.add("pin_max_height");
     }
