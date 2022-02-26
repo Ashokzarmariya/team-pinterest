@@ -5,34 +5,48 @@ import { BsQuestionLg } from "react-icons/bs";
 import { useEffect } from "react";
 import { useState } from "react";
 
+import { Link } from "react-router-dom";
+
 const Home = () => {
   const [data, setData] = useState([]);
 
-  const api_key="563492ad6f91700001000001e9fb2073b9d94fb88ac11114a060be83"
+  // const api_key="563492ad6f91700001000001e9fb2073b9d94fb88ac11114a060be83"
 
-  const getData = async() => {
-    const res = await fetch("https://api.pexels.com/v1/curated?page=2&per_page=60", {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        Authorization:api_key,
-      }
-    })
-    const imgData = await res.json()
-    setData(imgData.photos)
-    console.log("api",imgData.photos)
-  };
+  // const getData = async() => {
+  //   const res = await fetch("https://api.pexels.com/v1/curated?page=2&per_page=60", {
+  //     method: "GET",
+  //     headers: {
+  //       Accept: "application/json",
+  //       Authorization:api_key,
+  //     }
+  //   })
+
+  //   const imgData = await res.json()
+  //   //setData(imgData.photos)
+  //   //console.log("api",imgData.photos)
+  // };
+  const homeData = async () => {
+    
+    const res = await fetch("https://pinterest-backend8.herokuapp.com/post/get")
+    const resData = await res.json();
+    setData(resData);
+    
+  }
   useEffect(() => {
-    getData()
-  },[])
+    homeData()
+    //getData()
+  }, [])
+  
+
   return (
     <div className="flex flex-wrap justify-center  mt-10">
       
       {data.map((item) => {
-        return <HomeCard key={item.id} imgUrl={item.src.medium}/>;
+        return <HomeCard key={item._id} imgUrl={item.imgUrl} name={item.title.substr(0,5)+"..."} web={ item.webLink}/>;
       })}
       <div className="fixed bottom-16 right-10 bg-white z-20 p-3 rounded-full">
-        <BsPlusLg />
+        <Link to="newpin"><BsPlusLg /> </Link>
+        
       </div>
       <div className="fixed bottom-3 right-10 bg-white z-20 p-3 rounded-full">
         <BsQuestionLg />

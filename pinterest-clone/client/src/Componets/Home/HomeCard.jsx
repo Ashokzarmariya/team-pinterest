@@ -6,11 +6,13 @@ import { MdCallMade } from "react-icons/md";
 
 
 
-const HomeCard = ({imgUrl}) => {
+const HomeCard = ({imgUrl,name, web}) => {
   const [enter, setEnter] = useState(false);
 
+  
+
   return (
-    <div className=" w-48 mx-1 mb-7 z-10 ">
+    <div className="mx-1 mb-7 z-10">
       <div
         className="relative fullScaleContent"
         onMouseEnter={() => {
@@ -22,7 +24,7 @@ const HomeCard = ({imgUrl}) => {
         
       >
         <img
-          className="rounded-2xl "
+          className="rounded-2xl  h-72 min-w-min"
           src={imgUrl}
           alt="bike"
         />
@@ -31,9 +33,12 @@ const HomeCard = ({imgUrl}) => {
           <button className="btn btn-danger top-3 right-2 rounded-full absolute">
             Save
           </button>
-          <button  className="rounded-full flex px-2 py-1 bg-white opacity-80 bottom-2 left-3 absolute">
-           <MdCallMade className="text-sm mt-1 mr-1"/> <h1>bike</h1>
-          </button>
+          <div  className="rounded-full flex px-2 py-1 bg-white opacity-80 bottom-2 left-3 absolute">
+            <MdCallMade className="text-sm mt-1 mr-1" />
+            
+            <a className="text-xs" href={web} target="_blank" rel="noreferrer">{name}</a>
+            
+          </div>
           <button className="rounded-full bg-white text-2xl  opacity-80 bottom-3 right-11 absolute">
             
             <MdOutlineFileUpload/>
