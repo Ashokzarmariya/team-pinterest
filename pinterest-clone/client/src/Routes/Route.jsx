@@ -1,5 +1,6 @@
 import React from 'react'
 import { Routes,Route } from 'react-router-dom'
+import { Details } from '../Componets/Details/Details'
 import Home from '../Componets/Home/Home'
 
 import Navbar from '../Componets/Navbar/Navbar'
@@ -19,7 +20,8 @@ const Routers = () => {
         <Route path="/home" exact element={<Home />}></Route>
         <Route path="/today" exact element={<About />}></Route>
         <Route path="/" exact element={<Home />}></Route>
-        <Route path="/serch" exact element={<Search/>}></Route>
+        <Route path="/serch" exact element={<Search />}></Route>
+        <Route path="/post/:id" exact element={<Details/>}></Route>
       </Routes>
       
     </div>

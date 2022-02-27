@@ -52,8 +52,8 @@ const Home = () => {
       
       {data.map((item) => {
 
-       return <Link to={`/post/${item._id}`}><HomeCard storeLocalStorage={() => {storeLocalStorage(item) }} key={item._id} imgUrl={item.imgUrl} name={item.title.substr(0,5)+"..."} web={ item.webLink}/>
-        </Link>
+        return <HomeCard storeLocalStorage={() => { storeLocalStorage(item) }} key={item._id} imgUrl={item.imgUrl} name={item.title.substr(0, 5) + "..."} web={item.webLink} id={ item._id}/>
+        
          ;
       })}
       <div className="fixed bottom-16 right-10 bg-white z-20 p-3 rounded-full">

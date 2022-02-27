@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 
 
-const HomeCard = ({imgUrl,name, web, storeLocalStorage}) => {
+const HomeCard = ({imgUrl,name, web, storeLocalStorage,id}) => {
   const [enter, setEnter] = useState(false);
 
   
@@ -24,11 +24,13 @@ const HomeCard = ({imgUrl,name, web, storeLocalStorage}) => {
         }}
         
       >
-        <img
+        <Link to={`post/${id}`}> <img
           className="rounded-2xl  h-72 min-w-min"
           src={imgUrl}
           alt="bike"
         />
+        </Link>
+       
         
         <div className={enter ? "block" : "hidden"}>
           <button onClick={storeLocalStorage} className="btn btn-danger top-3 right-2 rounded-full absolute">
