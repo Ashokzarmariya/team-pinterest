@@ -23,9 +23,6 @@ const Routers = () => {
   return (
     <div>
      
-      
-      
-
       <Routes>
         <Route path='/nabar' element={<Navbar/>}></Route>
         <Route path="/home" exact element={<HomeNav/>}></Route>
