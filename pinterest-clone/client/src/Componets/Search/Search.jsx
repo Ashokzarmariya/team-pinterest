@@ -12,7 +12,7 @@ const Search = () => {
   return (
     <>
     <Navbar/>
-      <div className='flex flex-wrap'>
+      <div className='flex flex-wrap '>
           {searchData.map((item) => {
               return <HomeCard imgUrl={item.imgUrl} name={item.title.substr(0,4)+"..."} web={ item.webLink}/>
           })}

@@ -34,7 +34,8 @@ const Routers = () => {
         <Route path="/search" exact element={<Search />}></Route>
         <Route path="/post/:id" exact element={<Details/>}></Route>
         <Route path="/profile" exact element={<Profile />}></Route>
-        <Route path="/:main" exact element={<Main/>}></Route>
+        <Route path="/:main" exact element={<Main />}></Route>
+        
       </Routes>
       
     </div>
