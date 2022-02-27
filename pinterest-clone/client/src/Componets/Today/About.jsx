@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "../Navbar/Navbar";
 import "./About.css";
 
 //import { Navbar } from "./Navbarm";
@@ -7,7 +8,7 @@ export const About = () => {
   return (
     <div>
       
-
+<Navbar/>
 
 <h1 className="todayhead mt-3">Stay Inspired</h1>
   <div className="today"> 

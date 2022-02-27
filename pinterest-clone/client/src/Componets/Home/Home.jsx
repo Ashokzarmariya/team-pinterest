@@ -6,6 +6,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 import { Link } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
+
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -42,13 +44,16 @@ const Home = () => {
     
   }
   useEffect(() => {
+
     homeData()
     //getData()
   }, [])
   
 
   return (
-    <div className="flex flex-wrap justify-center  mt-10">
+    <>
+      {/* <Navbar/> */}
+      <div className="flex flex-wrap justify-center  mt-10">
       
       {data.map((item) => {
 
@@ -64,6 +69,8 @@ const Home = () => {
         <BsQuestionLg />
       </div>
     </div>
+    </>
+    
   );
 };
 

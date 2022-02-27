@@ -22,7 +22,7 @@ const Input = () => {
           onKeyPress={(e) => {
             if (e.key === "Enter") {
               handelSearch(keyword);
-              navigate("serch");
+              navigate("/search");
               
             }
           }}

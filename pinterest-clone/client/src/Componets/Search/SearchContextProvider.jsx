@@ -10,7 +10,9 @@ export const SearchContextProvider = ({ children }) => {
   
   async function handelSearch(keyword) {
     console.log("handelSearch working")
-    const res = await fetch(`https://pinterest-backend8.herokuapp.com/post/get/${keyword}`)
+    const res = await fetch(`https://pinterest-backend8.herokuapp.com/post/key/${keyword}`)
+    //https://pinterest-backend8.herokuapp.com/key/dog
+
     const data = await res.json();
     console.log("context",data)
     setSearchData(data)

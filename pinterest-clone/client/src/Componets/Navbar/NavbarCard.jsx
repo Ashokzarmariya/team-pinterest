@@ -62,7 +62,7 @@ export default function Example() {
                     {navigation.map((item) => (
                       <Link
                         key={item.name}
-                        to={item.name.toLowerCase()}
+                        to={`/${item.name.toLowerCase()}`}
                         className={classNames(
                           item.current ? 'bg-gray-900 text-white' : 'text-black hover:bg-gray-300 hover:text-white',
                           'px-3 py-2 rounded-md text-sm font-medium'

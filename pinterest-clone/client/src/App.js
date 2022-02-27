@@ -1,18 +1,12 @@
 
-import './App.css';
-import { Details } from './components/details/Details';
-import { Modal } from './components/profile/Modal';
-import { Pin } from './components/profile/pin';
-import { Profile } from './components/profile/profile';
+
+import Routers from "./Routes/Route";
 
 function App() {
   return (
     <div >
-     <Details/>
-      {/* <Profile/> */}
-      {/* <Pin/> */}
-
-      {/* <Modal/> */}
+      <Routers/>
+     
     </div>
   );
 }

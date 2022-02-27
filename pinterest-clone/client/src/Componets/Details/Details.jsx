@@ -6,6 +6,7 @@ import "./Details.css"
 import { useParams } from "react-router-dom"
 import { useEffect } from "react"
 import Home from "../Home/Home"
+import Navbar from "../Navbar/Navbar"
 
 export const Details=()=>{
     const [postData, setPostData] = useState({});
@@ -21,6 +22,7 @@ export const Details=()=>{
     }
 
     useEffect(() => {
+        
         getPost(); 
     }, [])
     
@@ -35,7 +37,10 @@ export const Details=()=>{
       }
 
     return (
+        <>
+            <Navbar/>
         <div className="mt-10 ">
+
             <div>
             <div className="product_details p-10">
                  <div className="product_img my-7">
@@ -91,6 +96,7 @@ export const Details=()=>{
             </div>
 <div> <Home/></div>
             </div>
-        </div>
+            </div>
+            </>
     )
 }
