@@ -25,6 +25,15 @@ const Home = () => {
   //   //setData(imgData.photos)
   //   //console.log("api",imgData.photos)
   // };
+  const storeLocalStorage = (item) => {
+    if (!JSON.parse(localStorage.getItem("data"))) {
+      localStorage.setItem("data", JSON.stringify([]))
+    }   
+    var data1 = JSON.parse(localStorage.getItem("data"));
+    data1.push(item)
+    localStorage.setItem("data", JSON.stringify(data1))
+  
+  }
   const homeData = async () => {
     
     const res = await fetch("https://pinterest-backend8.herokuapp.com/post/get")
@@ -42,7 +51,10 @@ const Home = () => {
     <div className="flex flex-wrap justify-center  mt-10">
       
       {data.map((item) => {
-        return <HomeCard key={item._id} imgUrl={item.imgUrl} name={item.title.substr(0,5)+"..."} web={ item.webLink}/>;
+
+       return <Link to={`/post/${item._id}`}><HomeCard storeLocalStorage={() => {storeLocalStorage(item) }} key={item._id} imgUrl={item.imgUrl} name={item.title.substr(0,5)+"..."} web={ item.webLink}/>
+        </Link>
+         ;
       })}
       <div className="fixed bottom-16 right-10 bg-white z-20 p-3 rounded-full">
         <Link to="newpin"><BsPlusLg /> </Link>

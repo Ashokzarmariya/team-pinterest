@@ -2,18 +2,19 @@ import React, { useState } from "react";
 import { IoEllipsisHorizontalCircleSharp } from "react-icons/io5";
 import { MdOutlineFileUpload } from "react-icons/md";
 import { MdCallMade } from "react-icons/md";
+import { Link } from "react-router-dom";
 //import "./Homecss.css"
 
 
 
-const HomeCard = ({imgUrl,name, web}) => {
+const HomeCard = ({imgUrl,name, web, storeLocalStorage}) => {
   const [enter, setEnter] = useState(false);
 
   
 
   return (
     <div className="mx-1 mb-7 z-10">
-      <div
+      <div 
         className="relative fullScaleContent"
         onMouseEnter={() => {
           setEnter(true);
@@ -30,7 +31,7 @@ const HomeCard = ({imgUrl,name, web}) => {
         />
         
         <div className={enter ? "block" : "hidden"}>
-          <button className="btn btn-danger top-3 right-2 rounded-full absolute">
+          <button onClick={storeLocalStorage} className="btn btn-danger top-3 right-2 rounded-full absolute">
             Save
           </button>
           <div  className="rounded-full flex px-2 py-1 bg-white opacity-80 bottom-2 left-3 absolute">
